@@ -11,7 +11,7 @@ import SwiftUI
 struct A1AppsAssignmentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WardrobeView()
         }
     }
 }

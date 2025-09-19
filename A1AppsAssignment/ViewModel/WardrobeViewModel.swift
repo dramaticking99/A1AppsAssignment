@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@MainActor // Ensures that all updates to @Published properties happen on the main thread.
+@MainActor
 class WardrobeViewModel: ObservableObject {
     
     @Published var people: [InterviewPerson] = []
@@ -26,17 +26,10 @@ class WardrobeViewModel: ObservableObject {
         errorMessage = nil
         
         do {
-            // 1. Fetch data from the URL
             let (data, _) = try await URLSession.shared.data(from: url)
-            
-            // 2. Decode the JSON into our model objects
             let decodedResponse = try JSONDecoder().decode(APIResponse.self, from: data)
-            
-            // 3. Update the people array
             self.people = decodedResponse.data
-            
         } catch {
-            // 4. Handle any errors
             self.errorMessage = "Failed to fetch data: \(error.localizedDescription)"
         }
         

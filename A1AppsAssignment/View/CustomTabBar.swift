@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// The custom tab bar at the bottom of the screen.
 struct CustomTabBar: View {
     var body: some View {
         HStack {
@@ -41,7 +40,7 @@ struct CustomTabBar: View {
         .padding(.horizontal, 30) // This padding keeps the icons from the screen edges
         .frame(height: 60) // Sets the height for the interactive part of the bar
         .background(
-            // KEY CHANGE: Apply a background that ignores the bottom safe area.
+            // A background that ignores the bottom safe area.
             Color(.systemBackground)
                 .ignoresSafeArea(edges: .bottom)
                 .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: -5)
@@ -49,7 +48,6 @@ struct CustomTabBar: View {
     }
 }
 
-// A helper view for the buttons in the tab bar.
 struct TabBarButton: View {
     let iconName: String
     

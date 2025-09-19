@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// This wrapper is needed because the person data is nested under a "data" key in the JSON.
 struct APIResponse: Codable {
     let data: [InterviewPerson]
 }

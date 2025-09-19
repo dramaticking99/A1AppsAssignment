@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// The header section with the gradient and title.
 struct HeaderView: View {
     var body: some View {
         ZStack {
@@ -17,17 +16,16 @@ struct HeaderView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
-            .ignoresSafeArea(edges: .top) // Allow the gradient to extend into the status bar area
-
+            .ignoresSafeArea(edges: .top)
+            
             // MARK: - Content Layer
             VStack(alignment: .leading, spacing: 4) {
-                // Top row with icons and centered title
                 HStack {
                     Image(systemName: "chevron.left")
                     Spacer()
                     Image(systemName: "ellipsis")
                 }
-                .font(.title2.weight(.semibold)) // Apply modifier to all icons in the HStack
+                .font(.title2.weight(.semibold))
                 
                 Spacer()
                 
@@ -44,6 +42,6 @@ struct HeaderView: View {
             .padding(.horizontal)
             .padding(.bottom)
         }
-        .frame(height: 120) // Give the header a consistent, fixed height
+        .frame(height: 120)
     }
 }
